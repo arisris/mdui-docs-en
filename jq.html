@@ -1,0 +1,1972 @@
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>JavaScript 工具库 - MDUI 开发文档, Material Design 前端框架</title>
+  <link rel="stylesheet" href="assets/mdui-v0.4.3/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.12.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.12.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <header class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+      <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
+      <a href="https://www.mdui.org/" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+      <a href="index.html" class="mdui-typo-title">Documentation</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: 'Set theme'}"><i class="mdui-icon material-icons">color_lens</i></span>
+      <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: 'View Github'}">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+          <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+    c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+    c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+    c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+    c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+    c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+  
+  <div class="mdui-drawer" id="main-drawer">
+    <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
+          <div class="mdui-list-item-content">start using</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="download.html" class="mdui-list-item mdui-ripple ">installation</a>
+          <a href="compatibility.html" class="mdui-list-item mdui-ripple ">compatibilitypatibility</a>
+          <a href="jq.html" class="mdui-list-item mdui-ripple ">JavaScript tool library</a>
+          <a href="global.html" class="mdui-list-item mdui-ripple ">JavaScript global methods</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">layers</i>
+          <div class="mdui-list-item-content">style</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="color.html" class="mdui-list-item mdui-ripple ">Colors and themes</a>
+          <a href="font.html" class="mdui-list-item mdui-ripple ">Font</a>
+          <a href="grid.html" class="mdui-list-item mdui-ripple ">Grid layout</a>
+          <a href="typo.html" class="mdui-list-item mdui-ripple ">typesetting</a>
+          <a href="icon.html" class="mdui-list-item mdui-ripple ">icon</a>
+          <a href="media.html" class="mdui-list-item mdui-ripple ">media</a>
+          <a href="helper.html" class="mdui-list-item mdui-ripple ">Auxiliary class</a>
+          <a href="shadow.html" class="mdui-list-item mdui-ripple ">shadowadow</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item mdui-collapse-item-open">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">widgets</i>
+          <div class="mdui-list-item-content">Component</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="ripple.html" class="mdui-list-item mdui-ripple ">Ripple animation effect</a>
+          <a href="button.html" class="mdui-list-item mdui-ripple ">Button</a>
+          <a href="fab.html" class="mdui-list-item mdui-ripple ">Floating operation button</a>
+          <a href="select.html" class="mdui-list-item mdui-ripple ">Drop-down selection</a>
+          <a href="divider.html" class="mdui-list-item mdui-ripple ">Divider</a>
+          <a href="panel.html" class="mdui-list-item mdui-ripple ">Expandable panel</a>
+          <a href="textfield.html" class="mdui-list-item mdui-ripple ">Text box</a>
+          <a href="selection_control.html" class="mdui-list-item mdui-ripple ">Select control</a>
+          <a href="slider.html" class="mdui-list-item mdui-ripple ">Slider</a>
+          <a href="list.html" class="mdui-list-item mdui-ripple ">List</a>
+          <a href="list_control.html" class="mdui-list-item mdui-ripple ">List control</a>
+          <a href="grid_list.html" class="mdui-list-item mdui-ripple ">Grid list</a>
+          <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab Tab</a>
+          <a href="toolbar.html" class="mdui-list-item mdui-ripple ">toolbar</a>
+          <a href="appbar.html" class="mdui-list-item mdui-ripple mdui-list-item-active">App bar</a>
+          <a href="drawer.html" class="mdui-list-item mdui-ripple ">Navigation drawer</a>
+          <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">Bottom navigation bar</a>
+          <a href="card.html" class="mdui-list-item mdui-ripple ">card</a>
+          <a href="chip.html" class="mdui-list-item mdui-ripple ">Scrap of paper</a>
+          <a href="tooltip.html" class="mdui-list-item mdui-ripple ">tooltip</a>
+          <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+          <a href="table.html" class="mdui-list-item mdui-ripple ">form</a>
+          <a href="dialog.html" class="mdui-list-item mdui-ripple ">Dialog box</a>
+          <a href="menu.html" class="mdui-list-item mdui-ripple ">menu</a>
+          <a href="progress.html" class="mdui-list-item mdui-ripple ">Progress indicator</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">view_carousel</i>
+          <div class="mdui-list-item-content">JavaScript Plug-in</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+          <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">local_mall</i>
+          <div class="mdui-list-item-content">Resources</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material icon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<a id="anchor-top"></a>
+
+<div class="mdui-container doc-container doc-no-cover">
+  <h1 class="doc-title mdui-text-color-theme">JavaScript Tool Library</h1>
+  <div class="doc-intro mdui-typo">
+    <p>MDUI has a built-in lightweight JavaScript tool library. It has jQuery-like api and jQuery-style chain calls, but the volume is only one-sixth of jQuery.</p>
+    <p>You can pass <code>mdui.JQ</code> To call the library, but it's better to put <code>mdui.JQ</code> Stored in a short variable for easy recall. In order to avoid conflicts with other libraries, it is recommended to use <code>$$</code>。
+    </p>
+    <pre><code class="lang-js">var $$ = mdui.JQ;</code></pre>
+    <p>In the following documents, all use <code>$$</code> To represent <code>mdui.JQ</code>。</p>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="jq.html#jq">mdui.JQ</a>
+        <ul>
+          <li><a data-scroll href="jq.html#jq-core">core</a></li>
+          <li><a data-scroll href="jq.html#jq-plugin">Plug-in writing</a></li>
+          <li><a data-scroll href="jq.html#jq-url">URL</a></li>
+          <li><a data-scroll href="jq.html#jq-array">Array and object operations</a></li>
+          <li><a data-scroll href="jq.html#jq-type">Data type judgment</a></li>
+          <li><a data-scroll href="jq.html#jq-obj">Object access</a></li>
+          <li><a data-scroll href="jq.html#jq-class">CSS class</a></li>
+          <li><a data-scroll href="jq.html#jq-attr">Node attributes</a></li>
+          <li><a data-scroll href="jq.html#jq-data">data storage</a></li>
+          <li><a data-scroll href="jq.html#jq-style">style</a></li>
+          <li><a data-scroll href="jq.html#jq-selector">Find node</a></li>
+          <li><a data-scroll href="jq.html#jq-dom">Node operation</a></li>
+          <li><a data-scroll href="jq.html#jq-form">Form</a></li>
+          <li><a data-scroll href="jq.html#jq-event">event</a></li>
+          <li><a data-scroll href="jq.html#jq-ajax">AJAX</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="jq.html#jq-other">More common methods</a></li>
+    </ul>
+  </nav>
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">mdui.JQ <a class="doc-anchor" id="jq"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">core <a class="doc-anchor" id="jq-core"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>$$()</code></td>
+            <td>
+              <p>There are multiple uses of this method:</p>
+              <p>You can pass in a CSS selector as a parameter and return a JQ object containing the matched elements. This method is implemented by querySelectorAll.</p>
+              <pre><code class="lang-js">$$('.mdui-table')</code></pre>
+
+              <p>You can pass in DOM elements, DOM element arrays, NodeList, JQ objects, and return JQ objects containing the specified elements.</p>
+              <pre><code class="lang-js">$$(document)</code></pre>
+
+              <p>You can pass in an HTML string and return a JQ object containing a DOM created from HTML.</p>
+              <pre><code class="lang-js">$$('&lt;div id=&quot;wrapper&quot;&gt;&lt;span id=&quot;inner&quot;&gt;&lt;/span&gt;&lt;/div&gt;')</code></pre>
+
+              <p>You can pass in a function, which will be called after the DOM is loaded.</p>
+              <pre><code class="lang-js">$$(function () { console.log('DOM Loaded') })</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Plug-in writing <a class="doc-anchor" id="jq-plugin"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>$$.extend()</code></td>
+            <td>
+              <p>If only one object is passed in, the properties in the object will be merged into the JQ object, which is equivalent to adding new functions under the JQ namespace.</p>
+              <pre><code class="lang-js">$$.extend({
+  customFunc: function () {}
+})
+
+// Then you can call the custom method like this
+$$.customFunc()
+</code></pre>
+              <p>If two or more objects are passed in, the properties of all objects are added to the first object, and the merged object is returned.</p>
+              <pre><code class="lang-js">var object = $$.extend(
+  { key1: val1 },
+  { key2: val2 },
+  { key3: val3 }
+);
+
+// At this time, the first object and return value are both { key1: val1, key2: val2, key3: val3 }</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.fn.extend()</code></td>
+            <td>
+              <p>Extend methods on JQ's prototype chain.</p>
+              <pre><code class="lang-js">$$.fn.extend({
+  customFunc: function () {}
+})
+
+// Then you can use the extended method like this
+$$(document).customFunc()</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">URL <a class="doc-anchor" id="jq-url"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>$$.param()</code></td>
+            <td>
+              <p>Serialize the array or object.</p>
+              <pre><code class="lang-js">$$.param({width:1680, height:1050})
+// width=1680&amp;height=1050
+
+$$.param({foo: {one: 1,two: 2 } })
+// foo[one]=1&amp;foo[two]=2
+
+$$.param({ids:[1,2,3] })
+// ids[]=1&amp;ids[]=2&amp;ids[]=3</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Array object operation <a class="doc-anchor" id="jq-array"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>$$.each()</code></td>
+            <td>
+              <p>Iterate over an array or object</p>
+              <pre><code class="lang-js">$$.each(['a', 'b', 'c'], function (i, value) {
+  console.log(i + ':' + value);
+})
+
+// result:
+// 0:a
+// 1:b
+// 2:c</code></pre>
+              <pre><code class="lang-js">$$.each({'name': 'mdui', 'lang': 'zh'}, function (i, value) {
+  console.log(i + ':' + value);
+})
+
+// result
+// name:mdui
+// lang:zh</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.merge()</code></td>
+            <td>
+              <p>Merge two arrays, the merged result will replace the contents of the first array, and return the merged result.</p>
+              <pre><code class="lang-js">var first = ['a', 'b', 'c'];
+var second = ['c', 'd', 'e'];
+var result = $$.merge(first, second);
+console.log(first); // ['a', 'b', 'c', 'c', 'd', 'e']
+console.log(result); // ['a', 'b', 'c', 'c', 'd', 'e']</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.unique()</code></td>
+            <td>
+              <p>Delete duplicate elements in the array. It can be an array of DOM elements, an array of strings, and an array of numbers. Return the deduplicated array.</p>
+              <pre><code class="lang-js">var result = $$.unique([1,2,12,3,2,1,2,1,1,1,1]);
+console.log(result); // [1, 2, 12, 3]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.map()</code></td>
+            <td>
+              <p>Traverse the array or object, return a new array or object through the function,<code>null</code> with <code>undefined</code> Will be filtered out.</p>
+              <pre><code class="lang-js">var result = $$.map(['a', 'b', 'c'], function (value, key) {
+  return key + value;
+});
+console.log(result); // ['0a', '1b', '2c']</code></pre>
+              <pre><code class="lang-js">var result = $$.map([1, 2, 3], function (value, key) {
+  return [value, value + 1];
+});
+console.log(result); // [1, 2, 2, 3, 3, 4]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.contains()</code></td>
+            <td>
+              <p>Determine whether the parent node contains child nodes, and return a boolean value.</p>
+              <pre><code class="lang-js">$$.contains(document, document.body); // true
+$$.contains(document.body, document); // false</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Data type judgment <a class="doc-anchor" id="jq-type"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.is()</code></td>
+            <td>
+              <p>Detect the set of matched elements based on CSS selectors, DOM elements, or JQ objects. If at least one element matches, return true, otherwise return false.</p>
+              <pre><code class="lang-js">$$('.box').is('.box'); // true
+$$('.box').is('.boxss'); // false
+$$('.box').is($$('.box')[0]); // true</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Object access <a class="doc-anchor" id="jq-obj"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.length</code></td>
+            <td>
+              <p>Returns the number of elements in the JQ object.</p>
+              <pre><code class="lang-js">$$('body').length; // 1</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.each()</code></td>
+            <td>
+              <p>Traverse a JQ object and execute a function for each matched element. If the function returns false, the traversal ends.</p>
+              <p>The first parameter of the function is the index number of the element, and the second parameter is the current element. The this keyword of the function points to the current element.</p>
+              <pre><code class="lang-js">$$('img').each(function(i, element) {
+  this.src = 'test' + i + '.jpg';
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.map()</code></td>
+            <td>
+              <p>Traverse a JQ object, call a function for each element of the object, and generate a new JQ object that contains the return value of the function.<code>null</code> with <code>undefined</code> Will be filtered out.</p>
+              <p>The first parameter of the function is the index number of the element, and the second parameter is the current element. The this keyword of the function points to the current element.</p>
+              <pre><code class="lang-js">var result = $$('input.checked').map(function (i, element) {
+  return $$(this).val();
+});
+
+// result is a JQ object composed of the values ​​of the matched elements</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.eq()</code></td>
+            <td>
+              <p>Returns the JQ object of the element with the specified index number in the JQ object.</p>
+              <pre><code class="lang-js">$$('div').eq(0); // Returns the JQ object of the first element
+$$('div').eq(-1); // Returns the JQ object of the last element
+$$('div').eq(-2); // Returns the JQ object of the penultimate element</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.first()</code></td>
+            <td>
+              <p>Returns the JQ object of the first element in the JQ object.</p>
+              <pre><code class="lang-js">$$('div').first(); // Returns the JQ object of the first div</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.last()</code></td>
+            <td>
+              <p>Returns the JQ object of the last element in the JQ object.</p>
+              <pre><code class="lang-js">$$('div').last(); // Returns the JQ object of the last div</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.get()</code></td>
+            <td>
+              <p>Returns the DOM element with the specified index number in the JQ object. If no index number is specified, an array of all DOM elements in the JQ object will be returned.</p>
+              <pre><code class="lang-js">$$('div').get(); // Returns an array of all div elements
+$$('div').get(0); // Return the first div element
+$$('div').get(-1); // Return the last div element</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.index()</code></td>
+            <td>
+              <p>If no parameters are passed in, the index value of the first element in the JQ object relative to the sibling element is returned.</p>
+              <p>If a CSS selector is passed in as a parameter, the index value of the first element in the JQ object relative to the element that matches the CSS selector is returned.</p>
+              <p>If a DOM element is passed in, the index value of the DOM element in the JQ object is returned.</p>
+              <pre><code class="lang-html">&lt;div id=&quot;child&quot;&gt;
+  &lt;div id=&quot;child1&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;child2&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;child3&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;child4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+              <pre><code class="lang-js">$$('#child3').index(); // 2
+$$('#child3').index('#child div'); // 2
+$$('#child div').index($$('#child3').get(0); // 2</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.slice()</code></td>
+            <td>
+              <p>Returns a subset of JQ objects.</p>
+              <p>The subset is the elements starting from start. If the end parameter is passed in, the elements from start to the position that do not contain end are extracted.</p>
+              <pre><code class="lang-js">$$('div').slice(3); // Returns all elements after the third (including the third) in the object
+$$('div').slice(3, 5); // Returns the elements between the third to the fifth (including the third but not the fifth) in the object</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.filter()</code></td>
+            <td>
+              <p>Filter out the JQ objects of the elements that match the specified expression from the JQ objects. Parameters can be CSS selectors, JQ objects, DOM elements, functions.</p>
+              <p>When the parameter is a function, the first parameter of the function is the index number of the current element in the JQ object, the second parameter is the current element, and the this keyword points to the current element. When the function returns true, the element will be kept, when it returns false, the element will be removed.</p>
+              <pre><code class="lang-js">// Filter out all JQ objects containing div elements of the .box class
+$$('div').filter('.box');
+
+// Filter out all JQ objects with selected options
+$$('#select option').filter(function (idx, element) {
+  return element.selected;
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.not()</code></td>
+            <td>
+              <p>Filter out the JQ objects of the elements that do not match the specified expression from the JQ objects. Parameters can be CSS selectors, JQ objects, DOM elements, functions.</p>
+              <p>When the parameter is a function, the first parameter of the function is the index number of the current element in the JQ object, the second parameter is the current element, and the this keyword points to the current element. When the function returns true, the element will be removed, when it returns false, the element will be retained.</p>
+              <pre><code class="lang-js">// Filter out all JQ objects that do not contain div elements of the .box class
+$$('div').not('.box');
+
+// Filter out all JQ objects with unchecked options
+$$('#select option').not(function (idx, element) {
+  return element.selected;
+});</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">CSS class <a class="doc-anchor" id="jq-class"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.hasClass()</code></td>
+            <td>
+              <p>Determine whether the first element in the JQ object contains the specified CSS class.</p>
+              <pre><code class="lang-js">$$('div').hasClass('item')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.addClass()</code></td>
+            <td>
+              <p>Add CSS classes to the element. Multiple class names can be separated by spaces.</p>
+              <pre><code class="lang-js">$$('div').addClass('item')</code></pre>
+              <pre><code class="lang-js">$$('div').addClass('item1 item2')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.removeClass()</code></td>
+            <td>
+              <p>Remove the CSS class on the element. Multiple class names can be separated by spaces.</p>
+              <pre><code class="lang-js">$$('div').removeClass('item')</code></pre>
+              <pre><code class="lang-js">$$('div').removeClass('item1 item2')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.toggleClass()</code></td>
+            <td>
+              <p>If there are CSS classes on the element, delete them, and add them if they don’t. Multiple class names can be separated by spaces.</p>
+              <pre><code class="lang-js">$$('div').toggleClass('item')</code></pre>
+              <pre><code class="lang-js">$$('div').toggleClass('item1 item2')</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Node attributes <a class="doc-anchor" id="jq-attr"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.prop()</code></td>
+            <td>
+              <p>Gets or sets the attribute value of the selected element.</p>
+              <pre><code class="lang-js">// Get the attribute value of the first element
+$$('input[type="checkbox"]').prop('checked');
+
+// Set the attribute values ​​of all selected elements
+$$('input[type="checkbox"]').prop('checked', true);
+
+// Set multiple attribute values ​​of elements at the same time
+$$('input').prop({
+  checked: false,
+  disabled: true
+})</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.removeProp()</code></td>
+            <td>
+              <p>Delete the attribute value specified by the selected element.</p>
+              <pre><code class="lang-js">$$('input').removeProp('disabled')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.attr()</code></td>
+            <td>
+              <p>Gets or sets the attribute value of the selected element.</p>
+              <pre><code class="lang-js">// Get the attribute value of the first element
+$$('div').attr('username');
+
+// Set the attribute values ​​of all selected elements
+$$('div').attr('username', 'mdui');
+
+// Set multiple attribute values ​​of elements at the same time
+$$('div').prop({
+  username: 'mdui',
+  lastname: 'test'
+})</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.removeAttr()</code></td>
+            <td>
+              <p>Delete the specified attribute value of the selected element.</p>
+              <pre><code class="lang-js">$$('div').removeAttr('username')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.val()</code></td>
+            <td>
+              <p>Gets or sets the value of the selected element.</p>
+              <pre><code class="lang-js">// Get the value of the first element selected
+$$('#input').val()
+
+// Set the value of the selected element
+$$('#input').val('input value')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.text()</code></td>
+            <td>
+              <p>Gets or sets the text content of the selected element.</p>
+              <pre><code class="lang-js">// Get the text content of the first element selected
+$$('#box').text()
+
+// Set the text content of the selected element
+$$('#box').text('text content')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.html()</code></td>
+            <td>
+              <p>Gets or sets the HTML content of the selected element.</p>
+              <pre><code class="lang-js">// Get the HTML content of the first element selected
+$$('#box').html()
+
+// Set the HTML of the selected element
+$$('#box').html('html content')</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">data storage <a class="doc-anchor" id="jq-data"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>$$.data()</code></td>
+            <td>
+              <p>Read or store data on DOM elements.</p>
+              <pre><code class="lang-js">var dom = document.getElementById('box');
+
+// Store a string on the DOM element
+$$.data(dom, 'key', 'value');
+
+// Store an object on the DOM
+$$.data(dom, 'obj', {test: 'test'});
+
+// Store multiple data on the DOM at the same time
+$$.data(dom, {
+  key1: 'value1',
+  key2: {
+    test: 'test'
+  }
+});
+
+// Get all the data stored on the DOM
+$$.data(dom);
+</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.removeData()</code></td>
+            <td>
+              <p>Delete the data stored on the DOM.</p>
+              <pre><code class="lang-js">// Delete the data stored on the DOM with the key name key
+$$.removeData(dom, 'key');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.data()</code></td>
+            <td>
+              <p>Store data on the elements of the current JQ object.</p>
+              <pre><code class="lang-js">// Store a string on the .box element
+$$('.box').data('key', 'value');
+
+// Store an object on the .box element
+$$('.box').data('obj', {
+  test: 'test'
+});
+
+//Store multiple data on the .box element at the same time
+$$('.box').data({
+  key1: 'value1',
+  key2: {
+    test: 'test'
+  }
+});
+
+// Get all the data stored on the .box
+$$('.box').data();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.removeData()</code></td>
+            <td>
+              <p>Delete the data stored on the elements of the JQ object.</p>
+              <pre><code class="lang-js">// Delete the data with the key name key stored on the .box element
+$$('.box').removeData('key');</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">style <a class="doc-anchor" id="jq-style"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.css()</code></td>
+            <td>
+              <p>Get the style value of the first element in the JQ object, or set the style of each element.</p>
+              <pre><code class="lang-js">// Get element style value
+$$('#box').css('color')
+
+// Set the style value of the element
+$$('#box').css('color', 'red')
+
+// Set multiple style values ​​at the same time
+$$('#box').css({
+  'color': 'red',
+  'background-color': 'white'
+})</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.width()</code></td>
+            <td>
+              <p>If no parameters are passed in, get the width of the first element in the JQ object. </p>
+              <p>If a parameter is passed in, set the width of all elements in the JQ object. If the parameter is a number or a string of numbers, px will be automatically added as the unit. </p>
+              <p>The value obtained by this method does not include the inner and outer margins by default. When box-sizing:border-box, the inner margin will be included. </p>
+              <pre><code class="lang-js">$$('.box').width();
+$$('.box').width(10);
+$$('.box').width('20%')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.height()</code></td>
+            <td>
+              <p>If no parameters are passed in, get the height of the first element in the JQ object. </p>
+              <p>If a parameter is passed in, set the height of all elements in the JQ object. If the parameter is a number or a string of numbers, px will be automatically added as the unit. </p>
+              <p>The value obtained by this method does not include the inner and outer margins by default. When box-sizing:border-box, the inner margin will be included. </p>
+              <pre><code class="lang-js">$$('.box').height();
+$$('.box').height(10);
+$$('.box').height('20%');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.innerWidth()</code></td>
+            <td>
+              <p>Get the width of the element, including the padding.</p>
+              <pre><code class="lang-js">$$('.box').innerWidth();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.innerHeight()</code></td>
+            <td>
+              <p>Get the height of the element, including the padding.</p>
+              <pre><code class="lang-js">$$('.box').innerHeight();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.hide()</code></td>
+            <td>
+              <p>Hide all elements in the JQ object.</p>
+              <pre><code class="lang-js">$$('.box').hide();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.show()</code></td>
+            <td>
+              <p>Restore the display state of all elements in the JQ object.</p>
+              <pre><code class="lang-js">$$('.box').show();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.toggle()</code></td>
+            <td>
+              <p>Switch the display state of all elements in the JQ object.</p>
+              <pre><code class="lang-js">$$('.box').toggle();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.offset()</code></td>
+            <td>
+              <p>Get the offset of the element relative to the document, as well as the width and height of the element.</p>
+              <pre><code class="lang-js">$$('.box').offset();
+// {
+//   top: 20,
+//   left: 30,
+//   width: 200,
+//   height: 100
+// }</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.offsetParent()</code></td>
+            <td>
+              <p>Returns the JQ object of the parent element of the first element in the JQ object for positioning. That is, the first element whose position is relative or absolute in the parent element.</p>
+              <pre><code class="lang-js">$$('.box').offsetParent()</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.position()</code></td>
+            <td>
+              <p>Get the offset of the element relative to the parent element, as well as the width and height.</p>
+              <pre><code class="lang-js">$$('.box').position();
+// {
+//   top: 20,
+//   left: 30,
+//   width: 100,
+//   height: 200
+// }</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Find node <a class="doc-anchor" id="jq-selector"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.find()</code></td>
+            <td>
+              <p>Find the specified set of descendant nodes according to the CSS selector.</p>
+              <pre><code class="lang-js">// Found the descendant nodes of #box, the node collection that contains .box
+$$('#box').find('.box')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.children()</code></td>
+            <td>
+              <p>Get the direct child elements of the matched element, you can use the CSS selector as a parameter to filter.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Find all direct child elements of #box
+$$('#box').children()
+
+// Find all the direct child elements of #box, the set of elements containing .box
+$$('#box').children('.box')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.has()</code></td>
+            <td>
+              <p>The child elements of the matched element are filtered according to the passed in parameters, and the JQ object of the filtered element is returned.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Add background color to li containing ul
+$$('li').has('ul').css('background-color', 'red');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.parent()</code></td>
+            <td>
+              <p>Returns the JQ object of the matched direct parent element.</p>
+              <p>If no parameters are passed in, the JQ object of the direct parent element is returned directly. If a parameter is passed in, only the JQ object of the direct parent element that matches the parameter is returned.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Returns the immediate parent element of the .box element
+$$('.box').parent();
+
+// Returns the element of the .parent class in the direct parent element of the .box element
+$$('.box').parent('.parent');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.parents()</code></td>
+            <td>
+              <p>Returns the JQ objects of all matched ancestor elements.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">//Returns all the ancestors of the span element
+$$('span').parents();
+
+// Return all span elements that are the ancestors of p elements
+$$('span').parents('p');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.parentsUntil()</code></td>
+            <td>
+              <p>Find all the parent elements of the current element until the matching element is encountered.</p>
+              <p>The returned JQ object contains all the parent elements found below, but does not contain the elements matched by the parameter.</p>
+              <pre><code class="lang-js">// Find all the parent elements of the .item element until the .parent element is encountered
+$$('.item').parentsUntil('.parent');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.prev()</code></td>
+            <td>
+              <p>Get the JQ object of the previous sibling element of the current element. You can use parameters for filtering.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Returns the previous element of the .box element
+$$('.box').prev();
+
+// Get the previous div element of the .box element
+$$('.box').prev('div');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.prevAll()</code></td>
+            <td>
+              <p>Get the JQ objects of all sibling elements before the current element. You can use parameters for filtering.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Returns all sibling elements before the .box element
+$$('.box').prevAll();
+
+// Returns all the .selected sibling elements in front of the .box element
+$$('.box').prevAll('.selected');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.prevUntil()</code></td>
+            <td>
+              <p>Get all the sibling elements in front of the current element, until a matching element is encountered, and no matching element is included.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Returns all the sibling elements before the .box element, until the .until element is encountered
+$$('.box').prevUntil('.until');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.next()</code></td>
+            <td>
+              <p>Get the JQ object of the next sibling element of the current element. You can use parameters for filtering.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// 返回 .box 元素的后一个元素
+$$('.box').next();
+
+// 获取 .box 元素的后一个 div 元素
+$$('.box').next('div');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.nextAll()</code></td>
+            <td>
+              <p>Get the JQ objects of all sibling elements behind the current element. You can use parameters for filtering.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Returns all sibling elements after the .box element
+$$('.box').nextAll();
+
+// Return all .selected sibling elements behind the .box element
+$$('.box').nextAll('.selected');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.nextUntil()</code></td>
+            <td>
+              <p>Get all the sibling elements behind the current element, until a matching element is encountered, and the matching element is not included.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Return all the sibling elements after the .box element until the .until element is encountered
+$$('.box').nextUntil('.until');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.closest()</code></td>
+            <td>
+              <p>Matches from the current element upwards, and returns the first matched element.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Get the nearest .parent element among the parent elements of the .box element
+$$('.box').closest('.parent');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.siblings()</code></td>
+            <td>
+              <p>Get all sibling elements of the current element. You can use parameters for filtering.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// Get all the sibling elements of the .box element
+$$('.box').siblings();
+
+// Get all the sibling elements of the .box element with .selected elements
+$$('.box').siblings('.selected');</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.add()</code></td>
+            <td>
+              <p>Add elements to the current JQ object.</p>
+              <p>Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">//Add the element containing .selected to the current JQ object
+$$('.box').add('.selected');</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Node operation <a class="doc-anchor" id="jq-dom"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.empty()</code></td>
+            <td>
+              <p>Remove all child nodes of the selected element from the DOM.</p>
+              <pre><code class="lang-js">$$('.box').empty();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.remove()</code></td>
+            <td>
+              <p>Remove all selected elements from the DOM.</p>
+              <pre><code class="lang-js">$$('.box').remove();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.prepend()</code></td>
+            <td>
+              <p>Insert the specified content in front of the selected element.</p>
+              <p>The incoming parameters can be string, HTML, JQ object, DOM element, DOM element array, NodeList.</p>
+              <pre><code class="lang-js">// HTML Code
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('p').prepend('&lt;b&gt;Hello&lt;/b&gt;');
+
+// result
+[ &lt;p&gt;&lt;b&gt;Hello&lt;/b&gt;I would like to say: &lt;/p&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.prependTo()</code></td>
+            <td>
+              <p>Add the selected element to the front of the inside of another specified element.</p>
+              <p>Incoming Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// HTML Code
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('&lt;p&gt;Hello&lt;/p&gt;').prependTo('p');
+
+// result
+[ &lt;p&gt;&lt;p&gt;Hello&lt;/p&gt;I would like to say: &lt;/p&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.append()</code></td>
+            <td>
+              <p>Insert the specified content behind the selected element.</p>
+              <p>The incoming parameters can be string, HTML, JQ object, DOM element, DOM element array, NodeList.</p>
+              <pre><code class="lang-js">// HTML Code
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('p').append('&lt;b&gt;Hello&lt;/b&gt;');
+
+// result
+[ &lt;p&gt;I would like to say: &lt;b&gt;Hello&lt;/b&gt;&lt;/p&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.appendTo()</code></td>
+            <td>
+              <p>Insert the selected element behind the inside of another specified element.</p>
+              <p>Incoming Parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList.</p>
+              <pre><code class="lang-js">// HTML Code
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('&lt;p&gt;Hello&lt;/p&gt;').appendTo('p')
+
+// result
+[ &lt;p&gt;I would like to say: &lt;p&gt;Hello&lt;/p&gt;&lt;/p&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.after()</code></td>
+            <td>
+              <p>Insert content after the selected element.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList, HTML strings</p>
+              <pre><code class="lang-js">// HTML Code
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('p').after('&lt;b&gt;Hello&lt;/b&gt;')
+
+// result
+[ &lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.insertAfter()</code></td>
+            <td>
+              <p>Insert the selected element after the specified element.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList, HTML strings</p>
+              <pre><code class="lang-js">// HTML Code
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('&lt;b&gt;Hello&lt;/b&gt;').insertAfter('p');
+
+// result
+[ &lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.before()</code></td>
+            <td>
+              <p>Insert content before the selected element.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList, HTML strings</p>
+              <pre><code class="lang-js">// HTML
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('p').before('&lt;b&gt;Hello&lt;/b&gt;');
+
+// result
+[ &lt;b&gt;Hello&lt;/b&gt;&lt;p&gt;I would like to say: &lt;/p&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.insertBefore()</code></td>
+            <td>
+              <p>Insert the selected element in front of the specified element.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList, HTML strings</p>
+              <pre><code class="lang-js">// HTML
+&lt;p&gt;I would like to say: &lt;/p&gt;
+
+// js Code
+$$('p').insertBefore('&lt;b&gt;Hello&lt;/b&gt;');
+
+// result
+[ &lt;p&gt;I would like to say: &lt;/p&gt;&lt;b&gt;Hello&lt;/b&gt; ]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.replaceWith()</code></td>
+            <td>
+              <p>Replace the selected element with the new element.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList, HTML strings</p>
+              <pre><code class="lang-js">$$('.box').replaceWith('&lt;p&gt;Hello&lt;/p&gt;');
+// 用 &lt;p&gt;Hello&lt;/p&gt; 替换所有的 .box 元素 </code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.replaceAll()</code></td>
+            <td>
+              <p>Replace the specified element with the selected element.</p>
+              <p>The incoming parameters can be CSS selectors, JQ objects, DOM elements, DOM element arrays, NodeList</p>
+              <pre><code class="lang-js">$$('.new').replaceAll('.box');
+// Replace all .box elements with .new elements</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.clone()</code></td>
+            <td>
+              <p>Copy all elements in the collection through deep cloning.</p>
+              <p>Copy all the elements in the collection by deep cloning through the native cloneNode method. This method will not have data and event handlers copied to the new element. This is different from using a parameter in jquery to determine whether to copy data and event handling.</p>
+              <pre><code class="lang-js">$$('body').append($("#box").clone())</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">Form <a class="doc-anchor" id="jq-form"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.serializeArray()</code></td>
+            <td>
+              <p>Combine the values ​​of the form elements into an array of key-value pairs of name and value.</p>
+              <pre><code class="lang-js">$$('form').serializeArray();
+// [{"name":"golang","value":"456"},{"name":"name","value":"mdui"},{"name":"password","value":""}]</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.serialize()</code></td>
+            <td>
+              <p>Serialize the form element array or object.</p>
+              <pre><code class="lang-js">$$('form').serialize();
+// golang=456&name=mdui&password=</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">event <a class="doc-anchor" id="jq-event"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.on()</code></td>
+            <td>
+              <p>Bind event handlers to specific events of each matched element.</p>
+              <pre><code class="lang-js">// Bind the click event
+$$('.box').on('click', function (e) {
+  console.log('Clicked on the .box element');
+});
+
+// Bind multiple events
+$$('.box').on('click focus', function (e) {
+  console.log('click with focus Event will trigger the function');
+});
+
+// Event delegation
+$$(document).on('click', '.box', function (e) {
+  console.log('This function is triggered when the .box is clicked');
+});
+
+// Bind multiple events and event handling functions at the same time
+$$('.box').on({
+  'click': function (e) {
+    console.log('The click event is triggered');
+  },
+  'focus': function (e) {
+    console.log('The focus event is triggered');
+  }
+});
+
+// Incoming parameters
+$$('.box').on('click', {key1: 'value1', key2: 'value2'}, function (e) {
+  console.log('Click on the .box element and pass in parameters for the event handler');
+  // e._data for {key1: 'value1', key2: 'value2'}
+});
+
+// Get event parameters
+$$('.box').on('click', function (e, data) {
+  // data is equal to e._detail
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.one()</code></td>
+            <td>
+              <p>Bind event handlers to specific events of each matched element. But the event will only be triggered once.</p>
+              <p>The usage of the method and <code>.on()</code> The same, so no more examples.</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.off()</code></td>
+            <td>
+              <p>Unbound event from each matched element.</p>
+              <pre><code class="lang-js">// Unbound specified event
+$$('.box').off('click');
+
+// Unlock multiple bound events at the same time
+$$('.box').off('click focus');
+
+// Unbound specified event handler
+$$('.box').off('click', callback);
+
+// Unlock the event bound by the event delegate
+$$(document).off('click', '.box');
+
+// Cancel the specified event handling function bound by the event delegate
+$$(document).off('click', '.box', callback);</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.trigger()</code></td>
+            <td>
+              <p>Trigger the specified event</p>
+              <pre><code class="lang-js">// Trigger the specified event
+$$('.box').trigger('click');
+
+// Pass in parameters when the event is triggered
+$$('.box').trigger('click', {key1: 'value1', key2: 'value2'});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.ready()</code></td>
+            <td>
+              <p>DOM Loaded,<code>DOMContentLoaded</code> Triggered when the event is triggered.</p>
+              <pre><code class="lang-js">$$(document).ready(function () {
+  console.log('The current page DOM has been loaded');
+});
+
+// It also has another way of writing, which has the same effect as the .ready() method
+$$(function () {
+  console.log('The current page DOM has been loaded');
+});</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">AJAX <a class="doc-anchor" id="jq-ajax"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tr>
+            <td><code>$$.ajaxSetup()</code></td>
+            <td>
+              <p>Set the global AJAX default parameters.</p>
+              <pre><code class="lang-js">$$.ajaxSetup({
+  //Disable the triggering of global AJAX events by default
+  global: false,
+
+  // Use POST request by default
+  method: 'POST'
+});</code></pre>
+              <p>See the detailed parameter list below <a data-scroll href="jq.html#jq-ajax-options">AJAX parameter</a>。</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.ajax()</code></td>
+            <td>
+              <p>Send an AJAX request and return the XMLHttpRequest object it created.</p>
+              <pre><code>$$.ajax({
+  method: 'POST',
+  url: './test.php',
+  data: {
+    key1: 'val1',
+    key2: 'val2'
+  },
+  success: function (data) {
+    console.log(data);
+  }
+});</code></pre>
+              <p>See the detailed parameter list below <a data-scroll href="jq.html#jq-ajax-options">AJAX parameter</a>。</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.ajaxStart()</code></td>
+            <td>
+              <p>Global AJAX events.</p>
+              <p>AJAX The function is executed at the beginning of the request.</p>
+              <pre><code class="lang-js">$$(document).ajaxStart(function (event, xhr, options) {
+  // xhr: XMLHttpRequest Object
+  // options: AJAX Requested configuration parameters
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.ajaxSuccess()</code></td>
+            <td>
+<p>Global AJAX events. </p>
+              <p>AJAX The function is executed when the request is successful.</p>
+              <pre><code class="lang-js">$$(document).ajaxSuccess(function (event, xhr, options, data) {
+  // xhr: XMLHttpRequest Object
+  // options: AJAX Requested configuration parameters
+  // data: AJAX The data returned by the request
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.ajaxError()</code></td>
+            <td>
+              <p>Global AJAX events.</p>
+              <p>AJAX The function is executed when an error occurs in the request.</p>
+              <pre><code class="lang-js">$$(document).ajaxError(function (event, xhr, options) {
+  // xhr: XMLHttpRequest Object
+  // options: AJAX Requested configuration parameters
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.ajaxComplete()</code></td>
+            <td>
+              <p>Global AJAX events.</p>
+              <p>AJAX The function is executed when the request is completed.</p>
+              <pre><code class="lang-js">$$(document).ajaxComplete(function (event, xhr, options) {
+  // xhr: XMLHttpRequest Object
+  // options: AJAX Requested configuration parameters
+});</code></pre>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 class="doc-article-title">AJAX parameter <a class="doc-anchor" id="jq-ajax-options"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Parameter Type</th>
+            <th>Defaults</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>method</code></td>
+            <td><code>String</code></td>
+            <td><code>GET</code></td>
+            <td>
+              <p>Request method.</p>
+              <p>include：GET、POST、PUT、PATCH、HEAD、OPTIONS、DELETE</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>data</code></td>
+            <td><code>Object, String</code></td>
+            <td><code>''</code></td>
+            <td>The data sent to the server.</td>
+          </tr>
+          <tr>
+            <td><code>processData</code></td>
+            <td><code>Boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to convert the passed data into a query string and send it.</td>
+          </tr>
+          <tr>
+            <td><code>async</code></td>
+            <td><code>Boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether it is an asynchronous request.</td>
+          </tr>
+          <tr>
+            <td><code>cache</code></td>
+            <td><code>Boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to read from the cache. Only right GET、HEAD The request is valid.</td>
+          </tr>
+          <tr>
+            <td><code>username</code></td>
+            <td><code>String</code></td>
+            <td><code>''</code></td>
+            <td>HTTP User name for access authentication.</td>
+          </tr>
+          <tr>
+            <td><code>password</code></td>
+            <td><code>String</code></td>
+            <td><code>''</code></td>
+            <td>HTTP Password for access authentication.</td>
+          </tr>
+          <tr>
+            <td><code>headers</code></td>
+            <td><code>Object</code></td>
+            <td><code>{}</code></td>
+            <td>add to Headers Data in. allowable <code>beforeSend</code> Rewrite this value in the callback function.</td>
+          </tr>
+          <tr>
+            <td><code>xhrFields</code></td>
+            <td><code>Object</code></td>
+            <td><code>{}</code></td>
+            <td>
+              <p>Set at XMLHttpRequest The data on the object.</p>
+              <pre><code class="lang-js">$$.ajax({
+  url: 'A cross-domain URL',
+  xhrFields: {
+    withCredentials: true
+  }
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>statusCode</code></td>
+            <td><code>Object</code></td>
+            <td><code>{}</code></td>
+            <td>
+              <p>HTTP An object composed of status codes and functions.</p>
+              <pre><code class="lang-js">$$.ajax({
+  statusCode: {
+    404: function (xhr, textStatus) {
+      alert('Called when the return status code is 404');
+    },
+    200: function (data, textStatus, xhr) {
+      alert('Called when the return status code is 200');
+    }
+  }
+});</code></pre>
+              <p>The status code between 200-299 indicates that the request is successful, the function parameters and <code>success</code> The callback parameters are the same; otherwise, the request fails, and the function parameters are the same as <code>error</code> The parameters of the callback are the same.</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>dataType</code></td>
+            <td><code>String</code></td>
+            <td><code>text</code></td>
+            <td>
+              <p>The type of data returned by the server.</p>
+              <p>include：text、json、jsonp</p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>jsonp</code></td>
+            <td><code>String</code></td>
+            <td><code>callback</code></td>
+            <td>JSONP The name of the callback function in the request.</td>
+          </tr>
+          <tr>
+            <td><code>jsonpCallback</code></td>
+            <td><code>String, Function</code></td>
+            <td>Function to generate random string</td>
+            <td>JSONP The name of the requested callback function. You can specify a fixed name to enable the browser to cache GET request.</td>
+          </tr>
+          <tr>
+            <td><code>contentType</code></td>
+            <td><code>String</code></td>
+            <td><code>application/x-www-form-urlencoded</code></td>
+            <td>The encoding type of the content. for <code>false</code> Will not be set when Content-Type。</td>
+          </tr>
+          <tr>
+            <td><code>timeout</code></td>
+            <td><code>Number</code></td>
+            <td><code>0</code></td>
+            <td>The request timeout period (in milliseconds). When it is 0, it means never time out.</td>
+          </tr>
+          <tr>
+            <td><code>global</code></td>
+            <td><code>Boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to trigger global AJAX events.</td>
+          </tr>
+          <tr>
+            <td><code>beforeSend</code></td>
+            <td><code>Function</code></td>
+            <td></td>
+            <td>
+              <p>Called before the request is sent. return <code>false</code> The AJAX request will be cancelled at the time.</p>
+              <pre><code class="lang-js">$$.ajax({
+  beforeSend: function (xhr) {
+    // xhr for XMLHttpRequest Object
+  }
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>success</code></td>
+            <td><code>Function</code></td>
+            <td></td>
+            <td>
+              <p>Called after the request is successful.</p>
+              <pre><code class="lang-js">$$.ajax({
+  success: function (data, textStatus, xhr) {
+    // data for AJAX The data returned by the request
+    // textStatus Is the string containing the success code
+    // xhr for XMLHttpRequest Object
+  }
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>error</code></td>
+            <td><code>Function</code></td>
+            <td></td>
+            <td>
+              <p>Called when there is an error in the request.</p>
+              <pre><code class="lang-js">$$.ajax({
+  error: function (xhr, textStatus) {
+    // xhr for XMLHttpRequest Object
+    // textStatus Is the string containing the error code
+  }
+});</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>complete</code></td>
+            <td><code>Function</code></td>
+            <td></td>
+            <td>
+              <p>Called after the request is completed.</p>
+              <pre><code class="lang-js">$$.ajax({
+  complete: function (xhr, textStatus) {
+    // xhr is the XMLHttpRequest object
+    // textStatus Is a string containing a success or error code
+  }
+});</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">More common methods <a class="doc-anchor" id="jq-other"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <tbody>
+          <tr>
+            <td><code>.reflow()</code></td>
+            <td>
+              <p>Redraw the current element.</p>
+              <pre><code class="lang-js">$$('.box').reflow();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.transition()</code></td>
+            <td>
+              <p>Set the current element transition-duration Attributes.</p>
+              <pre><code class="lang-js">$$('.box').transition();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.transitionEnd()</code></td>
+            <td>
+              <p>Add a transitionend event callback on the current element.</p>
+              <pre><code class="lang-js">$$('.box').transitionEnd(function () {
+  console.log('The transitionend event of the .box element has fired');
+})</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.transform()</code></td>
+            <td>
+              <p>Set the transform property of the current element.</p>
+              <pre><code class="lang-js">$$('.box').transform('rotate(90deg)')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.transformOrigin()</code></td>
+            <td>
+              <p>Set the transform-origin property of the current element.</p>
+              <pre><code class="lang-js">$$('.box').transformOrigin('top center')</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>.mutation()</code></td>
+            <td>
+              <p>Initialize the components of the current element and the components of child elements.</p>
+              <pre><code class="lang-js">$$('[mdui-collapse]').mutation()</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.showOverlay()</code></td>
+            <td>
+              <p>Show the mask layer. You can pass in an integer parameter to indicate the z-index style of the mask layer, and the default is 2000.</p>
+              <pre><code class="lang-js">$$.showOverlay();</code></pre>
+              <button id="demo-jq-showoverlay" class="mdui-btn mdui-color-theme-accent mdui-ripple">Show the mask, automatically hide after 2 seconds
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.hideOverlay()</code></td>
+            <td>
+              <p>Hide the mask layer.</p>
+              <p>If you call $$.showOverlay() multiple times to show the mask layer, you also need to call $$.hideOverlay() the same number of times to hide the mask layer. You can force the mask layer to be hidden by passing in the parameter true.</p>
+              <pre><code class="lang-js">$$.hideOverlay();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.lockScreen()</code></td>
+            <td>
+              <p>Lock the screen.</p>
+              <pre><code class="lang-js">$$.lockScreen();</code></pre>
+              <button id="demo-jq-lockscreen" class="mdui-btn mdui-color-theme-accent mdui-ripple">Lock the screen, automatically unlock after 2 seconds
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.unlockScreen()</code></td>
+            <td>
+              <p>Unlock the screen.</p>
+              <p>If you call $$.lockScreen() multiple times to display the mask layer, you also need to call $$.unlockScreen() the same number of times to hide the mask layer. You can force the mask layer to be hidden by passing in the parameter true.</p>
+              <pre><code class="lang-js">$$.unlockScreen();</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.throttle()</code></td>
+            <td>
+              <p>Function throttling.</p>
+              <p>The first parameter is the function to be executed, and the second parameter is the delay time.</p>
+              <pre><code class="lang-js">$$.throttle(function () {
+  console.log('This function is executed once at most 100ms');
+}, 100)</code></pre>
+            </td>
+          </tr>
+          <tr>
+            <td><code>$$.guid()</code></td>
+            <td>
+              <p>Generate a globally unique ID.</p>
+              <pre><code class="lang-js">$$.guid();</code></pre>
+              <p>You can pass in a parameter. When the guid corresponding to the parameter value does not exist, a new guid will be generated and returned; when the guid corresponding to the parameter already exists, the existing guid will be returned directly.</p>
+              <pre><code class="lang-js">// The following two lines of code return the same value
+$$.guid('test');
+$$.guid('test');</code></pre>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="compatibility.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">compatibility</div>
+        </div>
+      </a>
+
+            <a href="global.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">JavaScript Global approach</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">Set document theme</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">Theme color</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">Main color</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">Accent color</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>Restore the default theme</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/smooth-scroll-11.1.0/smooth-scroll.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.12.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.4.3/js/mdui.min.js"></script>
+<script>var $$ = mdui.JQ;</script>
+<script src="assets/docs/js/docs.js"></script>
+
+<script>
+  var $$ = mdui.JQ;
+  $$('#demo-jq-showoverlay').on('click', function () {
+    $$.showOverlay();
+    setTimeout(function () {
+      $$.hideOverlay();
+    }, 2000);
+  });
+
+  $$('#demo-jq-lockscreen').on('click', function () {
+    $$.lockScreen();
+    setTimeout(function () {
+      $$.unlockScreen();
+    }, 2000);
+  });
+</script>

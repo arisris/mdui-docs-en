@@ -1,0 +1,1547 @@
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <title>Dialog-MDUI development document, Material Design front-end framework</title>
+  <link rel="stylesheet" href="assets/mdui-v0.4.3/css/mdui.min.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.12.0/styles/github-gist.css"/>
+  <link rel="stylesheet" href="assets/highlight-9.12.0/styles/railscasts.css"/>
+  <link rel="stylesheet" href="assets/docs/css/docs.css"/>
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <header class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+      <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
+      <a href="https://www.mdui.org/" class="mdui-typo-headline mdui-hidden-xs">MDUI</a>
+      <a href="index.html" class="mdui-typo-title">Documentation</a>
+      <div class="mdui-toolbar-spacer"></div>
+      <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: 'Set theme'}"><i class="mdui-icon material-icons">color_lens</i></span>
+      <a href="https://github.com/zdhxiong/mdui" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: 'View Github'}">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
+          <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+    c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
+    c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
+    c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
+    c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
+    c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C34.3,8.7,27,1.4,18,1.4z"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+  
+  <div class="mdui-drawer" id="main-drawer">
+    <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
+          <div class="mdui-list-item-content">start using</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="download.html" class="mdui-list-item mdui-ripple ">installation</a>
+          <a href="compatibility.html" class="mdui-list-item mdui-ripple ">compatibilitypatibility</a>
+          <a href="jq.html" class="mdui-list-item mdui-ripple ">JavaScript tool library</a>
+          <a href="global.html" class="mdui-list-item mdui-ripple ">JavaScript global methods</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">layers</i>
+          <div class="mdui-list-item-content">style</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="color.html" class="mdui-list-item mdui-ripple ">Colors and themes</a>
+          <a href="font.html" class="mdui-list-item mdui-ripple ">Font</a>
+          <a href="grid.html" class="mdui-list-item mdui-ripple ">Grid layout</a>
+          <a href="typo.html" class="mdui-list-item mdui-ripple ">typesetting</a>
+          <a href="icon.html" class="mdui-list-item mdui-ripple ">icon</a>
+          <a href="media.html" class="mdui-list-item mdui-ripple ">media</a>
+          <a href="helper.html" class="mdui-list-item mdui-ripple ">Auxiliary class</a>
+          <a href="shadow.html" class="mdui-list-item mdui-ripple ">shadowadow</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item mdui-collapse-item-open">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">widgets</i>
+          <div class="mdui-list-item-content">Component</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="ripple.html" class="mdui-list-item mdui-ripple ">Ripple animation effect</a>
+          <a href="button.html" class="mdui-list-item mdui-ripple ">Button</a>
+          <a href="fab.html" class="mdui-list-item mdui-ripple ">Floating operation button</a>
+          <a href="select.html" class="mdui-list-item mdui-ripple ">Drop-down selection</a>
+          <a href="divider.html" class="mdui-list-item mdui-ripple ">Divider</a>
+          <a href="panel.html" class="mdui-list-item mdui-ripple ">Expandable panel</a>
+          <a href="textfield.html" class="mdui-list-item mdui-ripple ">Text box</a>
+          <a href="selection_control.html" class="mdui-list-item mdui-ripple ">Select control</a>
+          <a href="slider.html" class="mdui-list-item mdui-ripple ">Slider</a>
+          <a href="list.html" class="mdui-list-item mdui-ripple ">List</a>
+          <a href="list_control.html" class="mdui-list-item mdui-ripple ">List control</a>
+          <a href="grid_list.html" class="mdui-list-item mdui-ripple ">Grid list</a>
+          <a href="tab.html" class="mdui-list-item mdui-ripple ">Tab Tab</a>
+          <a href="toolbar.html" class="mdui-list-item mdui-ripple ">toolbar</a>
+          <a href="appbar.html" class="mdui-list-item mdui-ripple mdui-list-item-active">App bar</a>
+          <a href="drawer.html" class="mdui-list-item mdui-ripple ">Navigation drawer</a>
+          <a href="bottom_nav.html" class="mdui-list-item mdui-ripple ">Bottom navigation bar</a>
+          <a href="card.html" class="mdui-list-item mdui-ripple ">card</a>
+          <a href="chip.html" class="mdui-list-item mdui-ripple ">Scrap of paper</a>
+          <a href="tooltip.html" class="mdui-list-item mdui-ripple ">tooltip</a>
+          <a href="snackbar.html" class="mdui-list-item mdui-ripple ">Snackbar</a>
+          <a href="table.html" class="mdui-list-item mdui-ripple ">form</a>
+          <a href="dialog.html" class="mdui-list-item mdui-ripple ">Dialog box</a>
+          <a href="menu.html" class="mdui-list-item mdui-ripple ">menu</a>
+          <a href="progress.html" class="mdui-list-item mdui-ripple ">Progress indicator</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">view_carousel</i>
+          <div class="mdui-list-item-content">JavaScript Plug-in</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="collapse.html" class="mdui-list-item mdui-ripple ">Collapse</a>
+          <a href="headroom.html" class="mdui-list-item mdui-ripple ">Headroom</a>
+        </div>
+      </div>
+  
+      <div class="mdui-collapse-item ">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">local_mall</i>
+          <div class="mdui-list-item-content">Resources</div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <a href="material_icon.html" class="mdui-list-item mdui-ripple ">Material icon</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<a id="anchor-top"></a>
+
+<div class="mdui-container doc-container">
+  <h1 class="doc-title mdui-text-color-theme">Dialog box</h1>
+  <div class="doc-intro mdui-typo">
+    <p>The dialog box in MDUI is a very versatile component, often used to ask users for information, notify or warn users.</p>
+    <p>Only one dialog box is displayed at the same time. If the current dialog box is not closed before opening the next dialog box, then the next dialog box will be added to the queue and will be opened after the current dialog box is closed.</p>
+
+    <div class="doc-intro-module">
+      <h3>Call method</h3>
+      <ol>
+        <li>Called by custom attributes</li>
+        <li>Call via JavaScript</li>
+      </ol>
+    </div>
+    <div class="doc-intro-module">
+      <h3>Related Reading</h3>
+      <p><a href="http://www.mdui.org/design/components/dialogs.html" target="_blank">Material Design Guidelines: Components-Dialog</a></p>
+    </div>
+  </div>
+
+  <nav class="doc-toc mdui-text-color-theme">
+    <ul>
+      <li>
+        <a data-scroll href="dialog.html#style">style</a>
+        <ul>
+          <li><a data-scroll href="dialog.html#basic">Standard dialog</a></li>
+          <li><a data-scroll href="dialog.html#no-title">Without title bar</a></li>
+          <li><a data-scroll href="dialog.html#stacked">Vertical button</a></li>
+          <li><a data-scroll href="dialog.html#fixed">Fixed title and button</a></li>
+          <li><a data-scroll href="dialog.html#custom">Custom content</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="dialog.html#call">Call method</a>
+        <ul>
+          <li><a data-scroll href="dialog.html#attr">Called by custom attributes</a></li>
+          <li><a data-scroll href="dialog.html#js">Call via JavaScript</a></li>
+          <li><a data-scroll href="dialog.html#option">parameter</a></li>
+          <li><a data-scroll href="dialog.html#method">method</a></li>
+          <li><a data-scroll href="dialog.html#event">event</a></li>
+        </ul>
+      </li>
+      <li>
+        <a data-scroll href="dialog.html#predefined">Predefined dialog</a>
+        <ul>
+          <li><a data-scroll href="dialog.html#dialog">mdui.dialog()</a></li>
+          <li><a data-scroll href="dialog.html#alert">mdui.alert()</a></li>
+          <li><a data-scroll href="dialog.html#confirm">mdui.confirm()</a></li>
+          <li><a data-scroll href="dialog.html#prompt">mdui.prompt()</a></li>
+        </ul>
+      </li>
+      <li><a data-scroll href="dialog.html#class">List of CSS class names</a></li>
+    </ul>
+  </nav>
+  <div class="doc-cover"></div>
+
+
+  <div class="doc-chapter">
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">style <a class="doc-anchor" id="style"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Standard dialog <a class="doc-anchor" id="basic"></a></h4>
+      <p>This is a standard dialog box.</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo1.html" target="_blank" mdui-tooltip="{content: 'Color name'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-1'}">open</button>
+
+        <div class="mdui-dialog" id="example-1">
+          <div class="mdui-dialog-title">Are you sure?</div>
+          <div class="mdui-dialog-content">You'll lose all photos and media!</div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>erase</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-title&quot;&gt;Are you sure?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;You'll lose all photos and media!&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;erase&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Without title bar <a class="doc-anchor" id="no-title"></a></h4>
+      <p>This dialog box does not contain a title bar.</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo2.html" target="_blank" mdui-tooltip="{content: 'Color name'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#exampleNoTitle'}">open</button>
+
+        <div class="mdui-dialog" id="exampleNoTitle">
+          <div class="mdui-dialog-content">Discard draft?</div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>discard</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;Discard draft?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;cancel&lt;/button&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;discard&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Vertical button <a class="doc-anchor" id="stacked"></a></h4>
+      <p>The buttons at the bottom of the dialog box are arranged horizontally by default. Just in <code>&lt;div class=&quot;mdui-dialog-actions&quot;&gt;&You can set the buttons to be arranged vertically.code> Add class <code>.mdui-dialog-actions-stacked</code> 即可将按钮设置为竖直排列。</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo3.html" target="_blank" mdui-tooltip="{content: 'Color name'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-2'}">open</button>
+
+        <div class="mdui-dialog" id="example-2">
+          <div class="mdui-dialog-title">Use Google's location service?</div>
+          <div class="mdui-dialog-content">Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</div>
+          <div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>turn on speed boost</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>no thanks</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-title&quot;&gt;Use Google's location service?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions mdui-dialog-actions-stacked&quot;&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;turn on speed boost&lt;/button&gt;
+    &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;no thanks&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Fixed title and button <a class="doc-anchor" id="fixed"></a></h4>
+      <p>When the content of the dialog box exceeds the height of the dialog box,<code>.mdui-dialog-content</code> The content in will generate scroll bars.</p>
+      <p>If
+        <code>.mdui-dialog-title</code> with <code>.mdui-dialog-actions</code> Put to <code>.mdui-dialog-content</code> internal,
+        The title and bottom buttons will scroll with the scroll bar; otherwise, the title and buttons will be fixed at the top and bottom, respectively, and will not scroll with the scroll bar.
+      </p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: '查看代码'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo4.html" target="_blank" mdui-tooltip="{content: 'Color name'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-3'}">open</button>
+
+        <div class="mdui-dialog" id="example-3">
+          <div class="mdui-dialog-content">
+            <div class="mdui-dialog-title">Use Google's location service?</div>
+            Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+            <br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test<br/>test
+          </div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>no thanks</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>turn on speeboost</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot;&gt;
+    &lt;div class=&quot;mdui-dialog-content&quot;&gt;
+      &lt;div class=&quot;mdui-dialog-title&quot;&gt;Use Google's location service?&lt;/div&gt;
+      Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+      &lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test&lt;br/&gt;test
+    &lt;/div&gt;
+    &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+      &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;no thanks&lt;/button&gt;
+      &lt;button class=&quot;<span class="mdui-typo"><a href="button.html">mdui-btn</a></span> <span class="mdui-typo"><a href="ripple.html">mdui-ripple</a></span>&quot;&gt;turn on speeboost&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Custom content <a class="doc-anchor" id="custom"></a></h4>
+      <p>Only in the dialog <code>&lt;div class=&quot;mdui-dialog&quot;&gt;&lt;/div&gt;</code> Is required, the content in this element can be replaced with any HTML。</p>
+      <p>In the following example, a Tab tab is placed in the dialog box:</p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo5.html" target="_blank" mdui-tooltip="{content: 'Color name'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" mdui-dialog="{target: '#example-4'}">open</button>
+
+        <div class="mdui-dialog" id="example-4">
+          <div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+            <a href="dialog.html#example4-tab1" class="mdui-ripple">web</a>
+            <a href="dialog.html#example4-tab2" class="mdui-ripple">shopping</a>
+            <a href="dialog.html#example4-tab3" class="mdui-ripple">videos</a>
+          </div>
+          <div id="example4-tab1" class="mdui-p-a-2">
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+            <p>tab 1</p>
+          </div>
+          <div id="example4-tab2" class="mdui-p-a-2">
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+            <p>tab 2</p>
+          </div>
+          <div id="example4-tab3" class="mdui-p-a-2">
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+            <p>tab 3</p>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;div class=&quot;mdui-dialog&quot; id=&quot;example-4&quot;&gt;
+  &lt;div class=&quot;mdui-tab mdui-tab-full-width&quot; id=&quot;example4-tab&quot;&gt;
+    &lt;a href=&quot;#example4-tab1&quot; class=&quot;mdui-ripple&quot;&gt;web&lt;/a&gt;
+    &lt;a href=&quot;#example4-tab2&quot; class=&quot;mdui-ripple&quot;&gt;shopping&lt;/a&gt;
+    &lt;a href=&quot;#example4-tab3&quot; class=&quot;mdui-ripple&quot;&gt;videos&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;example4-tab1&quot; class=&quot;mdui-p-a-2&quot;&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+    &lt;p&gt;tab 1&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;example4-tab2&quot; class=&quot;mdui-p-a-2&quot;&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+    &lt;p&gt;tab 2&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;example4-tab3&quot; class=&quot;mdui-p-a-2&quot;&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+    &lt;p&gt;tab 3&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var tab = new mdui.Tab('#example4-tab');
+  document.getElementById('example-4').addEventListener('open.mdui.dialog', function () {
+    tab.handleUpdate();
+  });
+&lt;/script&gt;</code></pre>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">Call method <a class="doc-anchor" id="call"></a></h2>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Called by custom attributes <a class="doc-anchor" id="attr"></a></h4>
+      <p><p>There is no need to write JavaScript code to use this method. Just in a controlling element<small>（For example: button）</small>Add on <code>mdui-dialog="<a href="dialog.html#option" data-scroll>options</a>"</code> Attributes. When calling through custom attributes, you need to add an additional<code>target</code> The parameter is used to specify the dialog box to be controlled, and its value is the CSS selector of the dialog box to be controlled.</p></p>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo6.html" target="_blank" mdui-tooltip="{content: 'Start debuging'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-ripple mdui-color-theme-accent" mdui-dialog="{target: '#exampleDialog'}">open</button>
+
+        <div class="mdui-dialog" id="exampleDialog">
+          <div class="mdui-dialog-title">Are you sure?</div>
+          <div class="mdui-dialog-content">You'll lose all photos and media!</div>
+          <div class="mdui-dialog-actions">
+            <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+            <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>erase</button>
+          </div>
+        </div>
+      </div>
+      <pre class="doc-example-code"><code class="lang-html">&lt;button class=&quot;mdui-btn mdui-ripple mdui-color-theme-accent&quot; mdui-dialog=&quot;{target: '#exampleDialog'}&quot;&gt;open&lt;/button&gt;
+
+&lt;div class=&quot;mdui-dialog&quot; id=&quot;exampleDialog&quot;&gt;
+  &lt;div class=&quot;mdui-dialog-title&quot;&gt;Are you sure?&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-content&quot;&gt;You'll lose all photos and media!&lt;/div&gt;
+  &lt;div class=&quot;mdui-dialog-actions&quot;&gt;
+    &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-dialog-close&gt;cancel&lt;/button&gt;
+    &lt;button class=&quot;mdui-btn mdui-ripple&quot; mdui-dialog-confirm&gt;erase&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>Some properties can be added to the elements in the dialog box to bind events, and these properties can also be used when calling with JavaScript.</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>Attributes</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>mdui-dialog-close</code></td>
+            <td>Clicking on the element will trigger <code>close.mdui.dialog</code> Event and close the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>mdui-dialog-cancel</code></td>
+            <td>Clicking on the element will trigger <code>cancel.mdui.dialog</code> event.</td>
+          </tr>
+          <tr>
+            <td><code>mdui-dialog-confirm</code></td>
+            <td>Clicking on the element will trigger <code>confirm.mdui.dialog</code> event.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">Call via JavaScript <a class="doc-anchor" id="js"></a></h4>
+      <p>Instantiate components:</p>
+      <pre><code class="lang-js">// selector is the CSS selector or DOM element or HTML string of the dialog
+// options are configuration parameters, see the parameter list below
+var inst = new mdui.Dialog(selector, options);</code></pre>
+    </div>
+    <a href="dialog/demo7.html" target="_blank" class="mdui-btn mdui-color-theme-accent">run</a>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">parameter <a class="doc-anchor" id="option"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Types of</th>
+            <th>Defaults</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>overlay</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to show the mask when opening the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to add url hash when opening the dialog box, if it is true, the back button of the browser or the return key of Android can be used to close the dialog box after opening the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether to make the dialog box modal. When it is false, the dialog box will be closed when the area outside the dialog box is clicked, otherwise it will not be closed.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when pressing the Esc key.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnCancel</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when the cancel button is pressed.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnConfirm</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when the OK button is pressed.</td>
+          </tr>
+          <tr>
+            <td><code>destroyOnClosed</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether to automatically destroy the dialog box after closing the dialog box.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">method <a class="doc-anchor" id="method"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>Method name</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>open()</code></td>
+            <td>Open the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>close()</code></td>
+            <td>Close the dialog.</td>
+          </tr>
+          <tr>
+            <td><code>toggle()</code></td>
+            <td>Toggles the open state of the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>getState()</code></td>
+            <td>Get the status of the dialog box. Contains four states（<code>opening</code>、<code>opened</code>、<code>closing</code>、<code>closed</code>）。</td>
+          </tr>
+          <tr>
+            <td><code>destroy()</code></td>
+            <td>Destroy the dialog.</td>
+          </tr>
+          <tr>
+            <td><code>handleUpdate()</code></td>
+            <td>Readjust the position of the dialog box and the height of the scroll bar. After opening the dialog box, if you modify the contents of the dialog box, you need to call this method.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">event <a class="doc-anchor" id="event"></a></h4>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>event</th>
+            <th>description</th>
+            <th>the goal</th>
+            <th>parameter</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>open.mdui.dialog</code></td>
+            <td>The event will be triggered when the dialog starts to open the animation.</td>
+            <td rowspan="6"><code>&lt;div class=&quot;mdui-dialog&quot;&gt;&lt;/div&gt;</code></td>
+            <td rowspan="6">
+              <code>event._detail.inst</code>: Examples
+            </td>
+          </tr>
+          <tr>
+            <td><code>opened.mdui.dialog</code></td>
+            <td>The event will be triggered when the dialog box ends to open the animation.</td>
+          </tr>
+          <tr>
+            <td><code>close.mdui.dialog</code></td>
+            <td>The event will be triggered when the dialog box starts to close the animation.</td>
+          </tr>
+          <tr>
+            <td><code>closed.mdui.dialog</code></td>
+            <td>The event will be triggered when the dialog box ends and closes the animation.</td>
+          </tr>
+          <tr>
+            <td><code>cancel.mdui.dialog</code></td>
+            <td>When the cancel button is pressed, the event will be triggered.</td>
+          </tr>
+          <tr>
+            <td><code>confirm.mdui.dialog</code></td>
+            <td>When the confirm button is pressed, the event will be triggered.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">Predefined dialog <a class="doc-anchor" id="predefined"></a></h2>
+      <p>MDUI encapsulates several predefined dialog box functions for common scenarios. These predefined dialog boxes are only called by JavaScript without writing HTML code.</p>
+      <p>These functions all return dialog instances.</p>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.dialog() <a class="doc-anchor" id="dialog"></a></h4>
+      <p>Open a dialog box, the title, content, buttons, etc. can be customized. This method is more general, the latter <code>mdui.alert()</code>、<code>mdui.confirm()</code>、<code>mdui.prompt()</code> All are encapsulated using this method.</p>
+      <pre><code class="lang-js">mdui.dialog(options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo8.html" target="_blank" mdui-tooltip="{content: 'Start debuging'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-dialog">open</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">mdui.dialog({
+  title: 'title',
+  content: 'content',
+  buttons: [
+    {
+      text: 'cancel'
+    },
+    {
+      text: 'confirm',
+      onClick: function(inst){
+        mdui.alert('Click the callback of the confirm button');
+      }
+    }
+  ]
+});</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <p>parameter:</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Types of</th>
+            <th>Defaults</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>title</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>The title of the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>content</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>The content of the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>buttons</code></td>
+            <td><code>array</code></td>
+            <td></td>
+            <td>An array of buttons, each button is an object with button parameters (see the table below).</td>
+          </tr>
+          <tr>
+            <td><code>stackedButtons</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether the buttons are arranged vertically.</td>
+          </tr>
+          <tr>
+            <td><code>cssClass</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>add to <code>.mdui-dialog</code> CSS classes on the.</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to listen <code>hashchange</code> Event, when it is true, you can close the dialog by using Android's back key or the browser back button.</td>
+          </tr>
+          <tr>
+            <td><code>overlay</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to display the mask layer after opening the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether to make the dialog box modal. When it is false, the dialog box will be closed when the area outside the dialog box is clicked, otherwise it will not be closed.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when pressing the Esc key.</td>
+          </tr>
+          <tr>
+            <td><code>destroyOnClosed</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to automatically destroy the dialog box after closing the dialog box.</td>
+          </tr>
+          <tr>
+            <td><code>onOpen</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>Callback when opening animation starts. Parameters are instances of dialog boxes.</td>
+          </tr>
+          <tr>
+            <td><code>onOpened</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>Callback at the end of the opening animation. Parameters are instances of dialog boxes.</td>
+          </tr>
+          <tr>
+            <td><code>onClose</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>Close the callback when the animation starts. Parameters are instances of dialog boxes.</td>
+          </tr>
+          <tr>
+            <td><code>onClosed</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>Callback when closing animation ends. Parameters are instances of dialog boxes.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Parameters of the button:</p>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Types of</th>
+            <th>Defaults</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>text</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>Button text.</td>
+          </tr>
+          <tr>
+            <td><code>bold</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether the button text is bold.</td>
+          </tr>
+          <tr>
+            <td><code>close</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box after clicking the button.</td>
+          </tr>
+          <tr>
+            <td><code>onClick</code></td>
+            <td><code>function</code></td>
+            <td></td>
+            <td>The callback function for clicking the button.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.alert() <a class="doc-anchor" id="alert"></a></h4>
+      <p>Open an alert box, which can contain a title, content, and a confirmation button:</p>
+      <pre><code class="lang-js">mdui.alert(text, onConfirm, options)</code></pre>
+      <pre><code class="lang-js">mdui.alert(text, title, onConfirm, options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo9.html" target="_blank" mdui-tooltip="{content: 'Start debuging'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-1">demo1</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-2">demo2</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-3">demo3</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-alert-4">demo4</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">// Text only
+mdui.alert('content');
+
+// With title and text
+mdui.alert('content', 'title');
+
+// With callback
+mdui.alert('content', 'title', function(){
+  mdui.alert('Clicked the confirm button');
+});
+
+// With text and callback
+mdui.alert('content', function(){
+  mdui.alert('Clicked the confirm button');
+});</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <ul>
+        <li><code>text</code>: text</li>
+        <li><code>title</code>: (Optional) Title</li>
+        <li><code>onConfirm</code>: (Optional) Click the callback of the confirm button. Parameters are instances of dialog boxes.</li>
+        <li><code>options</code>: (Optional) Parameters, see the table below.</li>
+      </ul>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Types of</th>
+            <th>Defaults</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>confirmText</code></td>
+            <td><code>string</code></td>
+            <td><code>ok</code></td>
+            <td>The text of the confirm button.</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to listen <code>hashchange</code> Event, when it is true, you can close the dialog by using Android's back key or the browser back button.</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether to make the dialog box modal. When it is false, the dialog box will be closed when the area outside the dialog box is clicked, otherwise it will not be closed.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when pressing the Esc key.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.confirm() <a class="doc-anchor" id="confirm"></a></h4>
+      <p>Open a confirmation box, which can contain a title, content, a confirmation button and a cancel button:</p>
+      <pre><code class="lang-js">mdui.confirm(text, onConfirm, onCancel, options)</code></pre>
+      <pre><code class="lang-js">mdui.confirm(text, title, onConfirm, onCancel, options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo10.html" target="_blank" mdui-tooltip="{content: 'Start debuging'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-1">demo1</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-2">demo2</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-3">demo3</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-confirm-4">demo4</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">// With text and confirmation callback
+mdui.confirm('content', function(){
+  mdui.alert('Clicked the confirm button');
+});
+
+// With text, confirm button and cancel button callback
+mdui.confirm('content',
+  function(){
+    mdui.alert('Clicked the confirm button');
+  },
+  function(){
+    mdui.alert('Clicked the cancel button');
+  }
+);
+
+// Contains text, title and confirmation button callback
+mdui.confirm('content', 'title', function(){
+  mdui.alert('Clicked the confirm button');
+});
+
+// Contains text, title confirmation button and cancel button callback
+mdui.confirm('content', 'title',
+  function(){
+    mdui.alert('Clicked the confirm button');
+  },
+  function(){
+    mdui.alert('Clicked the cancel button');
+  }
+);</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <ul>
+        <li><code>text</code>: text</li>
+        <li><code>title</code>: (Optional) title</li>
+        <li><code>onConfirm</code>: (Optional) Click the callback of the confirm button. The parameters are instances of dialog boxes.</li>
+        <li><code>onCancel</code>: (Optional) Click the cancel button to call back. The parameters are instances of dialog boxes.</li>
+        <li><code>options</code>: (Optional) Parameters, see the table below.</li>
+      </ul>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Types of</th>
+            <th>Defaults</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>confirmText</code></td>
+            <td><code>string</code></td>
+            <td><code>ok</code></td>
+            <td>The text of the confirm button.</td>
+          </tr>
+          <tr>
+            <td><code>cancelText</code></td>
+            <td><code>string</code></td>
+            <td><code>cancel</code></td>
+            <td>The text of the cancel button.</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to listen <code>hashchange</code> Event, when it is true, you can close the dialog by using Android's back key or the browser back button.</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether to make the dialog box modal. When it is false, the dialog box will be closed when the area outside the dialog box is clicked, otherwise it will not be closed.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when pressing the Esc key.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">mdui.prompt() <a class="doc-anchor" id="prompt"></a></h4>
+      <p>Open a dialog box that prompts the user for input, which can contain a title, content, text box, a confirmation button, and a cancel button:</p>
+      <pre><code class="lang-js">mdui.prompt(label, onConfirm, onCancel, options)</code></pre>
+      <pre><code class="lang-js">mdui.prompt(label, title, onConfirm, onCancel, options)</code></pre>
+    </div>
+    <div class="doc-example">
+      <div class="doc-example-tools"><a href="javascript:;" class="viewsource" mdui-tooltip="{content: 'View code'}"><i class="mdui-icon material-icons">code</i></a><a href="dialog/demo11.html" target="_blank" mdui-tooltip="{content: 'Start debuging'}"><i class="mdui-icon material-icons">play_arrow</i></a></div><div class="doc-example-demo-label">Example</div>      <div class="doc-example-demo">
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-1">demo1</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-2">demo2</button>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple" id="example-prompt-3">demo3</button>
+      </div>
+      <pre class="doc-example-code"><code class="lang-js">// Single line text box
+mdui.prompt('This is a single line text box',
+  function (value) {
+    mdui.alert('You entered:' + value + ', Clicked the confirm button');
+  },
+  function (value) {
+    mdui.alert('You entered:' + value + ', Clicked the cancel button');
+  }
+);
+
+// Multiline text box
+mdui.prompt('This is a multi-line text box',
+  function (value) {
+    mdui.alert('You entered:' + va, Clicked the confirm button');
+  },
+  function (value) {
+    mdui.alert('You entered:' + va, Clicked the cancel button');
+  },
+  {
+    type: 'textarea'
+  }
+);
+
+// With title
+mdui.prompt('Please enter text', 'title',
+  function (value) {
+    mdui.alert('You entered:' + value + ', Clicked the confirm button');
+  },
+  function (value) {
+    mdui.alert('You entered:' + value + ', Clicked the cancel button');
+  }
+);</code></pre>
+    </div>
+    <div class="mdui-typo">
+      <ul>
+        <li><code>label</code>: The text of the floating label of the text box</li>
+        <li><code>title</code>: (Optional) title</li>
+        <li><code>onConfirm</code>: (Optional) Click the callback of the confirm button. Contains two parameters, namely the value of the text box and the instance of the dialog box.</li>
+        <li><code>onCancel</code>: (Optional) Click the cancel button to call back. Contains two parameters, the value of the text box and the instance of the dialog box.</li>
+        <li><code>options</code>: (Optional) Parameters, see the table below</li>
+      </ul>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+          <tr>
+            <th>parameter name</th>
+            <th>Types of</th>
+            <th>Defaults</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>confirmText</code></td>
+            <td><code>string</code></td>
+            <td><code>ok</code></td>
+            <td>Confirm button text</td>
+          </tr>
+          <tr>
+            <td><code>cancelText</code></td>
+            <td><code>string</code></td>
+            <td><code>cancel</code></td>
+            <td>The text of the cancel button</td>
+          </tr>
+          <tr>
+            <td><code>history</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to listen <code>hashchange</code> Event, when it is true, you can close the dialog by using Android's back key or the browser back button.</td>
+          </tr>
+          <tr>
+            <td><code>modal</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Whether to make the dialog box modal. When it is false, the dialog box will be closed when the area outside the dialog box is clicked, otherwise it will not be closed.</td>
+          </tr>
+          <tr>
+            <td><code>closeOnEsc</code></td>
+            <td><code>boolean</code></td>
+            <td><code>true</code></td>
+            <td>Whether to close the dialog box when pressing the Esc key.</td>
+          </tr>
+          <tr>
+            <td><code>confirmOnEnter</code></td>
+            <td><code>boolean</code></td>
+            <td><code>false</code></td>
+            <td>Fires when the Enter key is pressed<code>onConfirm</code> Callback.</td>
+          </tr>
+          <tr>
+            <td><code>type</code></td>
+            <td><code>string</code></td>
+            <td><code>text</code></td>
+            <td>The type of text box.
+              <ul>
+                <li><code>text</code>: Single line text box</li>
+                <li><code>textarea</code>: Multiline text box</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><code>maxlength</code></td>
+            <td><code>int</code></td>
+            <td></td>
+            <td>Maximum number of input characters</td>
+          </tr>
+          <tr>
+            <td><code>defaultValue</code></td>
+            <td><code>string</code></td>
+            <td></td>
+            <td>The default value of the text box</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="mdui-typo">
+      <h2 class="doc-chapter-title mdui-text-color-theme">CSS List of class names <a class="doc-anchor" id="class"></a></h2>
+      <div class="mdui-table-fluid">
+        <table class="mdui-table">
+          <thead>
+            <tr>
+              <th>Class name</th>
+              <th>effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.mdui-dialog</code></td>
+              <td>Define a dialog box component.</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-title</code></td>
+              <td>Define the title of the dialog box.</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-content</code></td>
+              <td>Define the content of the dialog box.</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-actions</code></td>
+              <td>Define the action bar of the dialog box.</td>
+            </tr>
+            <tr>
+              <td><code>.mdui-dialog-actions-stacked</code></td>
+              <td>Arrange the buttons on the action bar of the dialog box vertically.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a href="table.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">form</div>
+        </div>
+      </a>
+
+            <a href="menu.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">menu</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
+
+<div class="mdui-dialog" id="dialog-docs-theme">
+  <div class="mdui-dialog-title">Set document theme</div>
+  <div class="mdui-dialog-content">
+
+    <p class="mdui-typo-title">Theme color</p>
+    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <i class="mdui-radio-icon"></i>
+          Light
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="dark" />
+          <i class="mdui-radio-icon"></i>
+          Dark
+        </label>
+      </div>
+    </div>
+
+    <p class="mdui-typo-title mdui-text-color-theme">Main color</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="blue-grey" />
+          <i class="mdui-radio-icon"></i>
+          Blue Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-brown">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="brown" />
+          <i class="mdui-radio-icon"></i>
+          Brown
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-grey">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="grey" />
+          <i class="mdui-radio-icon"></i>
+          Grey
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="indigo" checked/>
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="pink" />
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-primary" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+    <p class="mdui-typo-title mdui-text-color-theme-accent">Accent color</p>
+    <form class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
+      <div class="mdui-col mdui-text-color-amber">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="amber" />
+          <i class="mdui-radio-icon"></i>
+          Amber
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="blue" />
+          <i class="mdui-radio-icon"></i>
+          Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-cyan">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="cyan" />
+          <i class="mdui-radio-icon"></i>
+          Cyan
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-orange" />
+          <i class="mdui-radio-icon"></i>
+          Deep Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-deep-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="deep-purple" />
+          <i class="mdui-radio-icon"></i>
+          Deep Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="green" />
+          <i class="mdui-radio-icon"></i>
+          Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-indigo">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="indigo" />
+          <i class="mdui-radio-icon"></i>
+          Indigo
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-blue">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-blue" />
+          <i class="mdui-radio-icon"></i>
+          Light Blue
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-light-green">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="light-green" />
+          <i class="mdui-radio-icon"></i>
+          Light Green
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-lime">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="lime" />
+          <i class="mdui-radio-icon"></i>
+          Lime
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-orange">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="orange" />
+          <i class="mdui-radio-icon"></i>
+          Orange
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-pink">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
+          <i class="mdui-radio-icon"></i>
+          Pink
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-purple">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="purple" />
+          <i class="mdui-radio-icon"></i>
+          Purple
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-red">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="red" />
+          <i class="mdui-radio-icon"></i>
+          Red
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-teal">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="teal" />
+          <i class="mdui-radio-icon"></i>
+          Teal
+        </label>
+      </div>
+      <div class="mdui-col mdui-text-color-yellow">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-accent" value="yellow" />
+          <i class="mdui-radio-icon"></i>
+          Yellow
+        </label>
+      </div>
+    </form>
+
+  </div>
+  <div class="mdui-divider"></div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>Restore the default theme</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
+  </div>
+</div>
+
+<script src="assets/smooth-scroll-11.1.0/smooth-scroll.min.js"></script>
+<script src="assets/holder-2.9.4/holder.min.js"></script>
+<script src="assets/highlight-9.12.0/highlight.pack.js"></script>
+<script src="assets/mdui-v0.4.3/js/mdui.min.js"></script>
+<script>var $$ = mdui.JQ;</script>
+<script src="assets/docs/js/docs.js"></script>
+
+
+<script>
+
+  // Examples of custom content
+  var tab = new mdui.Tab('#example4-tab');
+  $$('#example-4').on('open.mdui.dialog', function () {
+    tab.handleUpdate();
+  });
+
+  // mdui.dialog() Example
+  $$('#example-dialog').on('click', function(){
+    mdui.dialog({
+      title: 'title',
+      content: 'content',
+      buttons: [
+        {
+          text: 'cancel'
+        },
+        {
+          text: 'confirm',
+          onClick: function(inst){
+            mdui.alert('Click the callback of the confirm button');
+          }
+        }
+      ]
+    });
+  });
+
+  // mdui.alert() Example
+  $$('#example-alert-1').on('click', function(){
+    mdui.alert('content');
+  });
+  $$('#example-alert-2').on('click', function(){
+    mdui.alert('content', 'title');
+  });
+  $$('#example-alert-3').on('click', function(){
+    mdui.alert('content', 'title', function(inst){
+      mdui.alert('Clicked the confirm button');
+    });
+  });
+  $$('#example-alert-4').on('click', function(){
+    mdui.alert('content', function(){
+      mdui.alert('Clicked the confirm button');
+    });
+  });
+
+  // mdui.confirm() Example
+  $$('#example-confirm-1').on('click', function(){
+    mdui.confirm('content', function(){
+      mdui.alert('Clicked the confirm button');
+    });
+  });
+  $$('#example-confirm-2').on('click', function(){
+    mdui.confirm('content',
+      function(){
+        mdui.alert('Clicked the confirm button');
+      },
+      function(){
+        mdui.alert('Clicked the cancel button');
+      }
+    );
+  });
+  $$('#example-confirm-3').on('click', function(){
+    mdui.confirm('content', 'title', function(){
+      mdui.alert('Clicked the confirm button');
+    });
+  });
+  $$('#example-confirm-4').on('click', function(){
+    mdui.confirm('content', 'title',
+      function(){
+        mdui.alert('Clicked the confirm button');
+      },
+      function(){
+        mdui.alert('Clicked the cancel button');
+      }
+    );
+  });
+
+  // mdui.prompt Instance
+  $$('#example-prompt-1').on('click', function () {
+    mdui.prompt('This is a single line text box',
+      function (value) {
+        mdui.alert('You entered:' + value + ', Clicked the confirm button');
+      },
+      function (value) {
+        mdui.alert('You entered:' + value + ', Clicked the cancel button');
+      }
+    );
+  });
+  $$('#example-prompt-2').on('click', function () {
+    mdui.prompt('This is a multi-line text box',
+      function (value) {
+        mdui.alert('You entered:' + value + ', Clicked the confirm button');
+      },
+      function (value) {
+        mdui.alert('You entered:' + value + ', Clicked the cancel button');
+      },
+      {
+        type: 'textarea'
+      }
+    );
+  });
+  $$('#example-prompt-3').on('click', function () {
+    mdui.prompt('Please enter text', 'title',
+      function (value) {
+        mdui.alert('You entered:' + value + ', Clicked the confirm button');
+      },
+      function (value) {
+        mdui.alert('You entered:' + value + ', Clicked the cancel button');
+      }
+    );
+  });
+</script>
